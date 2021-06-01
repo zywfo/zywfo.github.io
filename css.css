@@ -1,0 +1,44 @@
+body{
+    background-color: dimgrey;
+}
+h1{
+    text-align: center;
+    color: aliceblue;
+}
+.box{
+    height: 300px;
+    width: 300px;
+    float: left;
+    perspective: 400px;
+}
+.inbox{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: 0.6s;
+}
+.f,
+.b{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    text-align: center;
+    line-height: 300px;
+    font-size: 60px;
+    font-family: cursive;
+    border: 0px;
+    border-radius: 40px;
+    background-color: chartreuse;
+    color: black;
+    backface-visibility: hidden;
+}
+.b{
+    background-color: black;
+    color: chartreuse;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.box:hover .inbox{
+    transform: rotateY(180deg);
+}
