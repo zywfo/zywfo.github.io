@@ -1,0 +1,109 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(lastbg.jpg);
+    background-size: cover;
+    background-position: absolute;
+    top: 0%;
+}
+.bggif img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 60%;
+        
+}
+.logo img{
+    height: 70px;
+    padding: 3% 7%
+}
+.intro{
+    color:azure;
+    font-family: 'Mate SC';
+    padding: 10%;
+    font-size: 25px;
+}
+.intro h1
+{
+    margin-bottom: -35px;
+}
+.intro h2
+{
+    margin-bottom: -35px;
+}
+#red
+{
+    margin-bottom: -35px;
+    color: red;
+    
+}
+.gobtn{
+    
+    height: 50px;
+    width: 90px;
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid white;
+    border-radius: 5px;
+    transition: 0.7s linear;
+    list-style: none;
+    text-decoration: none;
+}
+
+.gobtn ul li a{
+    font-family:cursive;
+    font-size: 23px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 10px;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    list-style-type: square;
+    z-index: 1;
+    
+}
+.gobtn ul li a span{
+    height: 100%;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    z-index: -1;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+
+.gobtn:hover span{
+    width:100%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius:100%;
+}
+.gobtn:hover{
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border: 1px solid white;
+    color: red;
+}
+.gobtn:hover a{
+    color: red;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
