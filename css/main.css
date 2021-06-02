@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(lastbg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/lastbg.jpg);
     background-size: cover;
     background-position: absolute;
     top: 0%;
@@ -76,7 +76,7 @@ body {
 .gobtn ul li a span {
     height: 100%;
     width: 0%;
-    background-color: white;
+    background-color: red;
     position: absolute;
     top: 0;
     left: 0%;
@@ -94,19 +94,19 @@ body {
 .gobtn:hover {
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
-    border: 1px solid white;
-    color: red;
+    border: 1px solid red;
+    color: white;
 }
 
 .gobtn:hover a {
-    color: red;
+    color: white;
     text-decoration: none;
     list-style: none;
 }
 
 @media screen and (max-width: 900px) {
     body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(lastbg.jpg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/lastbg.jpg);
         background-size: cover;
         background-attachment: fixed
     }
@@ -118,7 +118,7 @@ body {
 
 @media screen and (max-width: 500px) {
     body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bgast1MOB.png);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bgast1MOB.png);
         background-size: cover;
         background-position: absolute;
         top: 0%;
@@ -127,6 +127,11 @@ body {
 
     .logo img {
         width: 180px;
+    }
+
+    .gobtn ul li a {
+        font-family: "Mate SC";
+        text-align: center;
     }
 
     .intro {
