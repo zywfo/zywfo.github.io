@@ -3,11 +3,13 @@
     margin: 0px;
 }
 
+
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/lastbg.jpg);
     background-size: cover;
     background-position: absolute;
     top: 0%;
+    z-index: 0;
 }
 
 .bggif img {
@@ -45,17 +47,18 @@ body {
 }
 
 .gobtn {
-
+    animation: shakeY 3s ease infinite;
+    animation-delay: 2s;
     height: 50px;
     width: 90px;
     position: absolute;
-    top: 88%;
+    top: 85%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: -45px;
+    
     border: 3px solid white;
     border-radius: 5px;
     transition: 0.7s linear;
-    list-style: none;
     text-decoration: none;
 }
 
@@ -70,7 +73,7 @@ body {
     text-decoration: none;
     list-style-type: square;
     z-index: 1;
-
+    list-style:none;
 }
 
 .gobtn ul li a span {
