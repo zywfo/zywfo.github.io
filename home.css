@@ -72,12 +72,10 @@
 
 @keyframes rgb {
 
-    0%,
-    100% {
+    0%,{
         filter: hue-rotate(0deg)
     }
-
-    50% {
+    100%{
         filter: hue-rotate(360deg)
     }
 }
@@ -137,25 +135,87 @@
         filter: hue-rotate(0deg);
     }
 }
+@keyframes on-off{
+    0%{
+        opacity: 0.1;
+    }
+    2%{
+        opacity: 1;
+    }
+    4%{
+        opacity: 0.1;
+    }
+    30%{
+        opacity: 0.1;
+    }
+    32%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    62%{
+        opacity: 0.1;
+    }
+    70%{
+        opacity: 1;
+    }
+    72%{
+        opacity: 0.1;
+    }
+    74%{
+        opacity: 1;
+    }
+    82%{
+        opacity: 0.1;
+    }
+    84%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.animating{
+    animation-play-state: 
+}
 
 * {
     margin: 0x;
     padding: 0px;
+    font-size: 100%
 
 }
 
 body {
-    background: linear-gradient(rgba(57, 39, 112, 0.25), rgba(255, 39, 112, 0.25)), url(File/gorod-minimalizm-stil-art-noch.jpg);
-    background-position: center;
-    background-attachment: fixed;
+    background: black;
+    width:100%;
+
+}
+body::-moz-scrollbar
+{
+    width: 0px;
+}
+body::-ms-scrollbar
+{
+    width: 0px;
+}
+body::-o-scrollbar
+{
+    width: 0px;
+}
+body::-webkit-scrollbar
+{
+    width: 0px;
 }
 
 #homepage {
-    background: #060C00;
+    background: linear-gradient(-50deg,rgba(57, 39, 112, 0.25), rgba(255, 39, 112, 0.25)), url(File/marssurface.jpg);
+    background-position: center;
+    background-size: cover;
     width: 99%;
     height: 100vh;
     position: relative;
-
 }
 
 .rgbbar {
@@ -178,7 +238,6 @@ body {
     left: 20%;
     animation: rotate 10s ease both infinite;
     box-shadow: 0px 0px 20px rgba(143, 0, 241, 0.54), 0px 0px 20px rgba(143, 0, 241, 0.54), 0px 0px 20px rgba(143, 0, 241, 0.54), 0px 0px 20px #fff;
-
 }
 
 .sq2 {
@@ -287,8 +346,11 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
-    left: 25%;
+    left: 47%;
     font-family: 'Orbitron';
+}
+.qoute:hover{
+    animation: on-off 2s linear reverse 1;
 }
 
 #work {
@@ -296,6 +358,8 @@ body {
     font-size: 70px;
     text-align: left;
     text-shadow: 0 0 7px white, 0 0 10px red, 0 0 2px red, 0 0 5px red;
+    animation: on-off 2s linear reverse 1;
+    animation-delay: 2s;
 }
 
 #do {
@@ -304,6 +368,8 @@ body {
     text-align: left;
     text-shadow: 0 0 10px green, 0 0 10px yellowgreen, 0 0 2px white, 0 0 10px white;
     text-decoration: underline yellowgreen 5px;
+    animation: on-off 2s linear reverse 1;
+    animation-delay: 4s;
 
 }
 
@@ -342,7 +408,17 @@ body {
     top: 7%;
     right: 0px;
     margin-right: 200%;
-    animation: shakeX 5s ease infinite;
+}
+#mute{
+    height: 30px;
+    width: 30px;
+    color: mediumvioletred;
+    font-size: 30px;
+    position: absolute;
+    top: 70vh;
+    right: -50px;
+    margin-right: 200%;
+    animation: bounce 5s ease infinite;
     transition: 1s ease;
 }
 
@@ -390,7 +466,7 @@ body {
 }
 
 #menu ul li a {
-    color: #FF5F00;
+    color: #FFf;
     text-decoration: none;
     transition: 0.1s ease;
 }
@@ -407,38 +483,96 @@ body {
 
 #aboutpage {
     width: 99%;
-    height: 150vh;
+    height: 200vh;
     background: linear-gradient(black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     position: relative;
 }
-
 #intro {
     background: transparent;
     display: block;
-    height: 140px;
-    width: 50%;
-    text-align: center;
+    height: 200px;
+    width: 40%;
+    text-align: left;
     position: absolute;
-    top: 30%;
-    border: 1px solid white;
+    top: 10%;
+    left: 7%;
+}
+#intro p:before{
+    content: "";
+    height: 100%;
+    width: 10px;
+    background:linear-gradient(to right,red,aqua,blue);
+    position: absolute;
+    display: block;
+    top: 0%;
+    left: 0%;
+    animation: rgb 1s ease infinite;
 }
 
 #intro p {
-    color: red;
+    color: floralwhite;
     line-height: 40px;
-    font-size: 20px;
-    font-family: cursive;
-    margin: 10px;
-    border: 1px solid white;
-    animation: rgb 5s ease infinite;
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 20px;
+}
+
+#earth{
+    background: url(File/Earth1.png);
+    height: 60%;
+    width: 30%;
+    position: absolute;
+    right: 0px;
+    top: -10%;
+    background-size: cover;
+    z-index: 1;
+}
+
+.abt{
+    background: transparent;
+    display: block;
+    height: 280px;
+    width: 40%;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+}
+.abt p {
+    color: floralwhite;
+    line-height: 40px;
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    margin-right: 20px;
+}
+.abt h3 {
+    color: greenyellow;
+    font-family: 'Orbitron', monospace;
+    position: relative;
+    top: -5%;
+    right: 3%;
+    animation: rgb 2s ease infinite;
+}
+.abt p:after{
+    content: "";
+    height: 130%;
+    width: 10px;
+    background:linear-gradient(to right,red,aqua,blue);
+    position: absolute;
+    display: block;
+    top: 0%;
+    right: 0%;
+    animation: rgb 1s ease infinite;
+}
+.astro{
+    height: 350px;
+    position: absolute;
+    top:50%;
 }
 
 
-
-
-
-
 @media screen and (max-width:800px) {
+    
     .logo h2 {
         font-size: 20px;
     }
@@ -455,8 +589,8 @@ body {
     }
 
     .qoute {
-        top: 40%;
-        left: 25%;
+        top: 50%;
+        left: 45%;
     }
 
     .qoute h1 {
@@ -499,9 +633,46 @@ body {
         height: 25px;
         width: 25px;
     }
+
+    #intro {
+    height: 100px;
+    width: 40%;
+}
+    .abt{
+    height: 100px;
+    width: 40%;
+}
+    #intro p {
+    line-height: 25px;
+    font-size: 20px;
+    margin-left: 25px;
+}
+    .abt p {
+    line-height: 25px;
+    font-size: 20px;
+    margin-left: 25px;
+}
+    #abt h3{
+        right: 50%;
+    }
+    #intro p:before{
+    height: 150%;
+    width: 10px;
+}
+    .abt p:after{
+    height: 320%;
+    width: 10px;    
+}
+    .astro{
+    height: 250px;
+    top:50%;
 }
 
+}
+
+
 @media screen and (max-width:500px) {
+     
     .logo h2 {
         font-size: 20px;
     }
@@ -529,8 +700,82 @@ body {
     }
 
     #menu ul {
-        left: 30%;
+        left: 35%;
 
     }
+    
+    #intro {
+    height: 50px;
+    width: 40%;
+}
+    .abt{
+    height: 50px;
+    width: 40%;
+}
+    #intro p {
+    line-height: 15px;
+    font-size: 13px;
+    margin-left: 20px;
+}
+    .abt p {
+    line-height: 15px;
+    font-size: 13px;
+    margin-left: 25px;
+}
+    #abt h3{
+        right: 50%;
+    }
+    #intro p:before{
+    height: 220%;
+    width: 10px;
+}
+    .abt p:after{
+    height: 360%;
+    width: 10px;    
+}
+    .astro{
+    height: 150px;
+    top:52%;
+    margin-left: 20px;
+    }
 
+}
+@media screen and (max-width:450px){
+    #homepage{
+        background: linear-gradient(-50deg,rgba(57, 39, 112, 0.25), rgba(255, 39, 112, 0.25)), url(File/marssurfaseMobile.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    #intro p {
+    line-height: 15px;
+    font-size: 10px;
+    margin-left: 20px;
+}
+    .abt p {
+    line-height: 15px;
+    font-size: 10px;
+    margin-left: 5px;
+}
+    #explore{
+        font-size: 15px;
+        right: 10%
+    }
+    #intro p:before{
+    height: 120px;
+    width: 10px;
+}
+    .abt p:after{
+    height: 215px;
+    width: 10px;    
+}
+    .astro{
+    height: 100px;
+    }
+    .qoute{
+        left: 55%;
+        top: 65%;
+    }
+    #menu ul{
+        left: 30%;
+    }
 }
