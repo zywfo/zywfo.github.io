@@ -80,6 +80,7 @@
     }
 }
 
+
 @keyframes slideglitch {
     0% {
         transform: translate(0px)
@@ -176,10 +177,53 @@
         opacity: 1;
     }
 }
-.animating{
-    animation-play-state: 
+@keyframes no-rgb{
+    1%{
+        filter: hue-rotate(360deg)
+    }
+    100%{
+        filter: hue-rotate(0deg)
 }
-
+}
+@keyframes load{
+    0%{
+        width: 15%;
+        border-radius: 30%;
+    }
+    100%{
+        width: 100%;
+        border-radius: 20%;
+    }
+}
+@keyframes load-val{
+    0%{
+        content: '';
+    }
+    5%{
+        content: 'Loading files..';
+    }
+    15%{
+        content: 'Loading libraries..';
+    }
+    50%{
+        content: 'Half done!';
+    }
+    60%{
+        content: 'Loading Animations.';
+    }
+    70%{
+        content: 'Loading Animations..';
+    }
+    80%{
+        content: 'Loading Animations...';
+    }
+    90%{
+        content: 'Getting you a cup of TEA';
+    }
+    100%{
+        content: 'Done';
+    }
+}
 * {
     margin: 0x;
     padding: 0px;
@@ -207,6 +251,69 @@ body::-o-scrollbar
 body::-webkit-scrollbar
 {
     width: 0px;
+}
+
+.load-wrapper{
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    background-color:#001B1F ;
+    animation: rgb 4s linear 1 ;
+    z-index: 3;
+}
+#load-val{
+    display: flex;
+    justify-content: center;
+    line-height: 10vh;
+    color: #B73B50;
+    animation: no-rgb 4s linear 1;
+    animation-fill-mode: forwards;
+    height: 10vh;
+    width: 30%;
+    background-color: transparent;
+    font-size: 30px;
+    font-family: Orbitron;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 0px 0px 10px #560000,0px 0px 20px #FF8381;
+}
+#load-bar{
+    border-radius: 50%;
+    width: 50%;
+    height: 1vh;
+    background:transparent;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.bar{
+    border-radius: 30%;
+    float: left;
+    height: 100%;
+    width: 15%;
+    background:linear-gradient(to right, #f0f, #0ff);
+    animation: load 3.5s ease 0.5s 1 ;
+    animation-fill-mode: forwards;
+}
+#load-bar:after{
+    content: "";
+    color: aliceblue;
+    position: absolute;
+    left: 50%;
+    top: 500%;
+    transform: translate(-50%,-50%);
+    font-family: monospace;
+    font-size: 15px;
+    animation: load-val 4s linear 1;
+    animation-fill-mode: forwards;
+    
+}
+#load-val h1{
+    display: inline-block;
 }
 
 #homepage {
@@ -746,14 +853,17 @@ body::-webkit-scrollbar
         background-position: center;
         background-size: cover;
     }
+    #load-bar:after{
+        font-size: 10px;
+    }
     #intro p {
     line-height: 15px;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 20px;
 }
     .abt p {
     line-height: 15px;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 5px;
 }
     #explore{
