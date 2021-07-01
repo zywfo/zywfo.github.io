@@ -234,7 +234,6 @@
 body {
     background: black;
     width:100%;
-    overflow: hidden;
 
 }
 body::-moz-scrollbar
