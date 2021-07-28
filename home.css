@@ -224,6 +224,93 @@
         content: 'Done';
     }
 }
+@keyframes typing {
+    0% { 
+        width: 0%;
+        content: "NotAGeek!";
+    }
+    1%{
+        content: "WebDeveloper,";
+    }
+    20% { 
+        width: 100% ;
+        content: "WebDeveloper,";
+    }
+    25%{
+        width: 100% ;
+        content: "WebDeveloper,";
+    }
+    30%{
+        width: 0%;
+        content: "WebDeveloper,";
+    }
+    31%{
+        content: "Content Creator,";
+    }
+    40%{
+        width: 100%;
+        content: "Content Creator,";
+    }
+    45%{
+        width: 100%;
+        content: "Content Creator,";
+    }
+    50%{
+        width: 0%;
+        content: "Content Creator,";
+    }
+    51%{
+        content: "Gamer,";
+    }
+    57%{
+        width: 100%;
+        content: "Gamer,";
+    }
+    65%{
+        width: 100%;
+        content: "Gamer,";
+    }
+    70%{
+        width: 0%;
+        content: "Gamer,";
+    }
+    71%{
+        content: "Theorophysist,";
+    }
+    80%{
+        width: 100%;
+        content: "Theorophysist,";
+    }
+    85%{
+        width: 100%;
+        content: "Theorophysist,";
+    }
+    90%{
+        width: 0%;
+        content: "Theorophysist,";
+    }
+    91%{
+        content: "NotAGeek!";
+    }
+    95%{
+        width: 100%;
+        content: "NotAGeek!";
+    }100%{
+        width: 0%;
+        content: "NotAGeek!";
+    }
+    
+}
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: white; 
+    }
+}
+
+
 * {
     margin: 0x;
     padding: 0px;
@@ -234,7 +321,7 @@
 body {
     background: black;
     width:100%;
-
+    overflow-x: hidden;
 }
 body::-moz-scrollbar
 {
@@ -466,7 +553,7 @@ body::-webkit-scrollbar
     text-align: left;
     text-shadow: 0 0 7px white, 0 0 10px red, 0 0 2px red, 0 0 5px red;
     animation: on-off 2s linear reverse 1;
-    animation-delay: 2s;
+    animation-delay: 6s;
 }
 
 #do {
@@ -476,7 +563,7 @@ body::-webkit-scrollbar
     text-shadow: 0 0 10px green, 0 0 10px yellowgreen, 0 0 2px white, 0 0 10px white;
     text-decoration: underline yellowgreen 5px;
     animation: on-off 2s linear reverse 1;
-    animation-delay: 4s;
+    animation-delay: 7.3s;
 
 }
 
@@ -588,96 +675,178 @@ body::-webkit-scrollbar
     font-size: 5px;
 }
 
-#aboutpage {
+#aboutpage{
+    height: 80vh;
     width: 99%;
-    height: 200vh;
-    background: linear-gradient(black, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     position: relative;
 }
-#intro {
-    background: transparent;
-    display: block;
-    height: 200px;
-    width: 40%;
-    text-align: left;
+.abtme{
     position: absolute;
-    top: 10%;
-    left: 7%;
+    top: 40%;
+    left: 10%;
+    max-width: 80%;
 }
-#intro p:before{
+.intro{
+    font-size: 4vw;
+    color: azure;
+    
+}
+.typewriter {
+	display: inline-flex;
+}
+
+.typewriter-text:after{
+    display: block;
     content: "";
-    height: 100%;
-    width: 10px;
-    background:linear-gradient(to right,red,aqua,blue);
-    position: absolute;
+    vertical-align: baseline;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 15s steps(20, end) infinite, blink .75s step-end infinite;
+    white-space: nowrap;
+    font-family: Roboto mono;
+    font-size: 4vw;
+    color: red;
+    font-weight: 700;
+    border-right: 4px solid white;
+    box-sizing: border-box;
+}    
+
+.abtme p{
+    color: aliceblue;
+    font-family:monospace;
+    font-size: 1vw;
+}
+
+.services{
+    height: 100vh;
+    width: 99%;
+    background-color: #FC6B68;
+    position: relative;
+    overflow: hidden;
+}
+.services:after{
+    text-align: center;
+    font-size: 2vw;
+    font-family: orbitron;
+    text-decoration: overline;
+    text-decoration-color: white;
     display: block;
+    content: "- SERVICES -";
+    height: 10%;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.services .s1, .s2, .s3{
+    display: block;
+    position: absolute;
+    height: 50%;
+    width: 20%;
+    transform: translate(0%,-50%);
+    z-index: 4;
+}
+ 
+.circle1{
+    display: block;
+    position: absolute;
+    background: linear-gradient(rgb(254, 83, 187),rgb(245, 211, 0));
+    height: 70px;
+    width: 70px;
+    border-radius:50%;
+    top: -5%;
+    left: -10%;
+    transition: 0.5s ease;
+    box-shadow: 5px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.circle2{
+    display: block;
+    position: absolute;
+    background: linear-gradient(rgb(165, 216, 243),rgb(255, 157, 230));
+    height: 150px;
+    width: 150px;
+    border-radius:50%;
+    bottom: -5%;
+    right: -10%;
+    transition: 0.5s ease;
+    box-shadow: 5px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+    
+.s1{
+    top:50%;
+    left:10%;
+}
+.s2{
+    top:50%;
+    left:40%;
+}
+.s3{
+    top:50%;
+    left:70%;
+}
+.sv1{
+    position: absolute;
     top: 0%;
-    left: 0%;
-    animation: rgb 1s ease infinite;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter:blur(10px);
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.5s ease;
+    border-radius: 10px;
 }
 
-#intro p {
-    color: floralwhite;
-    line-height: 40px;
-    font-size: 30px;
-    font-family: 'Roboto Mono', monospace;
-    margin-left: 20px;
+.s1:hover .circle1{
+    top: 70%;
+    left: 90%;
+    animation: rgb 5s ease infinite;
+}.s1:hover .circle2{
+    bottom: 50%;
+    right: 60%;
+    animation: rgb 5s ease infinite;
+}.s1:hover .sv1{
+    height: 110%;
+    width: 110%;
 }
 
-#earth{
-    background: url(File/Earth1.png);
-    height: 60%;
-    width: 30%;
-    position: absolute;
-    right: 0px;
-    top: -10%;
-    background-size: cover;
-    z-index: 1;
+.s2:hover .circle1{
+    top: 70%;
+    left: 90%;
+    animation: rgb 5s ease infinite;
+}.s2:hover .circle2{
+    bottom: 50%;
+    right: 60%;
+    animation: rgb 5s ease infinite;
+}.s2:hover .sv1{
+    height: 110%;
+    width: 110%;
 }
 
-.abt{
-    background: transparent;
-    display: block;
-    height: 280px;
-    width: 40%;
-    text-align: right;
+.s3:hover .circle1{
+    top: 70%;
+    left: 90%;
+    animation: rgb 5s ease infinite;
+}.s3:hover .circle2{
+    bottom: 50%;
+    right: 60%;
+    animation: rgb 5s ease infinite;
+}.s3:hover .sv1{
+    height: 110%;
+    width: 110%;
+}
+
+.sv2{
     position: absolute;
     top: 50%;
-    right: 10%;
+    left: 50%;
+    font-size: 1.5vw;
+    font-weight: bolder;
+    font-family: orbitron;
+    color: #00A9FE;
+    transform: translate(-50%,-50%);
+    -webkit-text-stroke:0px ;
 }
-.abt p {
-    color: floralwhite;
-    line-height: 40px;
-    font-size: 30px;
-    font-family: 'Roboto Mono', monospace;
-    margin-right: 20px;
-}
-.abt h3 {
-    color: greenyellow;
-    font-family: 'Orbitron', monospace;
-    position: relative;
-    top: -5%;
-    right: 3%;
-    animation: rgb 2s ease infinite;
-}
-.abt p:after{
-    content: "";
-    height: 130%;
-    width: 10px;
-    background:linear-gradient(to right,red,aqua,blue);
-    position: absolute;
-    display: block;
-    top: 0%;
-    right: 0%;
-    animation: rgb 1s ease infinite;
-}
-.astro{
-    height: 350px;
-    position: absolute;
-    top:50%;
-}
-
-
 @media screen and (max-width:800px) {
     
     .logo h2 {
@@ -740,44 +909,35 @@ body::-webkit-scrollbar
         height: 25px;
         width: 25px;
     }
-
-    #intro {
-    height: 100px;
-    width: 40%;
+        #aboutpage{
+    height: 50vh;
 }
-    .abt{
-    height: 100px;
-    width: 40%;
+    .services{
+    height: 170vh;
+        font-size: 2vw;
 }
-    #intro p {
-    line-height: 25px;
-    font-size: 20px;
-    margin-left: 25px;
+    .services .s1, .s2, .s3{
+    height: 20%;
+    width: 50%;
 }
-    .abt p {
-    line-height: 25px;
-    font-size: 20px;
-    margin-left: 25px;
+    .s1{
+    top:25%;
+    left:25%;
+        
 }
-    #abt h3{
-        right: 50%;
-    }
-    #intro p:before{
-    height: 150%;
-    width: 10px;
-}
-    .abt p:after{
-    height: 320%;
-    width: 10px;    
-}
-    .astro{
-    height: 250px;
+.s2{
     top:50%;
+    left:25%;
+}
+.s3{
+    top:75%;
+    left:25%;
 }
 
+    .sv2{
+        font-size: 2.5vw;
 }
-
-
+}
 @media screen and (max-width:500px) {
      
     .logo h2 {
@@ -810,44 +970,34 @@ body::-webkit-scrollbar
         left: 35%;
 
     }
+    #aboutpage{
+    height: 50vh;
+}
+    .services{
+    height: 170vh;
+}
+    .services .s1, .s2, .s3{
+    height: 25%;
+    width: 60%;
+}
+    .s1{
+    top:25%;
+    left:20%;
+}
+.s2{
+    top:50%;
+    left:20%;
+}
+.s3{
+    top:75%;
+    left:20%;
+}
+      .sv2{
+        font-size: 3vw;
+}
     
-    #intro {
-    height: 50px;
-    width: 40%;
-}
-    .abt{
-    height: 50px;
-    width: 40%;
-}
-    #intro p {
-    line-height: 15px;
-    font-size: 13px;
-    margin-left: 20px;
-}
-    .abt p {
-    line-height: 15px;
-    font-size: 13px;
-    margin-left: 25px;
-}
-    #abt h3{
-        right: 50%;
-    }
-    #intro p:before{
-    height: 220%;
-    width: 10px;
-}
-    .abt p:after{
-    height: 360%;
-    width: 10px;    
-}
-    .astro{
-    height: 150px;
-    top:52%;
-    margin-left: 20px;
-    }
-
-}
 @media screen and (max-width:450px){
+
     #homepage{
         background: linear-gradient(-50deg,rgba(57, 39, 112, 0.25), rgba(255, 39, 112, 0.25)), url(File/marssurfaseMobile.jpg);
         background-position: center;
@@ -856,31 +1006,10 @@ body::-webkit-scrollbar
     #load-bar:after{
         font-size: 10px;
     }
-    #intro p {
-    line-height: 15px;
-    font-size: 12px;
-    margin-left: 20px;
-}
-    .abt p {
-    line-height: 15px;
-    font-size: 12px;
-    margin-left: 5px;
-}
-    #explore{
-        font-size: 15px;
-        right: 10%
-    }
-    #intro p:before{
-    height: 120px;
-    width: 10px;
-}
-    .abt p:after{
-    height: 215px;
-    width: 10px;    
-}
-    .astro{
-    height: 100px;
-    }
+.typewriter-text:after{
+    font-size: 6vw;
+   
+} 
     .qoute{
         left: 55%;
         top: 65%;
@@ -888,4 +1017,36 @@ body::-webkit-scrollbar
     #menu ul{
         left: 30%;
     }
+        #aboutpage{
+    height: 50vh;
+}
+    .services{
+    height: 170vh;
+}
+    .services:after{
+        font-size: 3vw;
+        top: 100px;
+    }
+    .services .s1, .s2, .s3{
+    height: 15%;
+    width: 50%;
+}
+    .s1{
+    top:25%;
+    left:25%;
+}
+.s2{
+    top:50%;
+    left:25%;
+}
+.s3{
+    top:75%;
+    left:25%;
+}
+      .sv2{
+        font-size: 3.5vw;
+}
+    .abtme p{
+    font-size: 3vw;
+}
 }

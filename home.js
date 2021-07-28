@@ -3,7 +3,7 @@ $(document).ready(function(){
         $('.load-wrapper').hide();
     },4300)
     
-    $('audio').prop('volume',0.4);
+    $('audio').prop('volume',0.5);
     $('#mute').click(function(){
         $('audio').prop('volume',0.0);
     });
